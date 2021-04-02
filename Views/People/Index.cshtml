@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata
+@using PeopleManagerEigen.Models;
+
+@model IList<Persoon>
+@{
+    ViewData["Title"] = "People";
+}
+
+<h1>People</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Voornaam
+            </th>
+            <th>
+                Familienaam
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var persoon in Model)
+        {
+            <partial name="_PersoonPartial" model="persoon" />
+        }
+    </tbody>
+</table>
+
