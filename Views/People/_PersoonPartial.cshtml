@@ -5,4 +5,13 @@
     <td>@Model.Voornaam</td>
     <td>@Model.Familienaam</td>
     <td>@Model.Email</td>
+    <td>
+        <a asp-controller="People" asp-action="Edit" asp-route-id="@Model.Id">bewerken</a>
+        <a asp-controller="People" asp-action="Delete" asp-route-id="@Model.Id">verwijderen</a>
+        <a class="btn btn-info"
+           data-toggle="modal"
+           data-target="#personDeleteModal"
+           data-id="@Model.Id"
+           data-mode="Delete">Delete Modal</a>
+    </td>
 </tr>
